@@ -30,19 +30,11 @@ BuildRequires:  perl
 BuildRequires:  perl(Test::More)
 BuildRequires:  perl(Test::Pod) >= 1.00
 BuildRequires:  perl-macros
-#BuildRequires:  perl(Test::Pod::Coverage)
 Requires:       perl(Carp)
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-%{perl_requires}
-Conflicts:      perlmod
 
 %description
-
- %{cpan_name} module for perl
+%{cpan_name} module for perl
 This little package serves to access the symbol table of perl.
-  Author:       Andreas Koenig <andk@cpan.org>
-                Tom Christiansen <tchrist@perl.com>
-        Based on the old dumpvar.pl by Larry Wall.
 
 %prep
 %setup -q -n %{cpan_name}-%{version}
