@@ -26,6 +26,7 @@ Summary:        Dump symbol names or the symbol table
 Url:            http://cpan.org/modules/by-module/Devel/
 Group:          Development/Libraries/Perl
 Source:         %{cpan_name}-%{version}.tar.gz
+Source1001: 	perl-Devel-Symdump.manifest
 BuildRequires:  perl
 BuildRequires:  perl(Test::More)
 BuildRequires:  perl(Test::Pod) >= 1.00
@@ -38,6 +39,7 @@ This little package serves to access the symbol table of perl.
 
 %prep
 %setup -q -n %{cpan_name}-%{version}
+cp %{SOURCE1001} .
 
 %build
 CFLAGS="%{optflags}" perl Makefile.PL
@@ -52,6 +54,7 @@ make test
 %perl_gen_filelist
 
 %files -f %{name}.files
+%manifest %{name}.manifest
 # normally you only need to check for doc files
 %defattr(-,root,root)
 %doc ChangeLog SIGNATURE
