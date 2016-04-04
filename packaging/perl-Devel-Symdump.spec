@@ -42,6 +42,9 @@ This little package serves to access the symbol table of perl.
 cp %{SOURCE1001} .
 
 %build
+export CFLAGS+=" -fvisibility=hidden"
+  export CXXFLAGS+=" -fvisibility=hidden"
+  
 CFLAGS="%{optflags}" perl Makefile.PL
 make %{?_smp_mflags}
 
