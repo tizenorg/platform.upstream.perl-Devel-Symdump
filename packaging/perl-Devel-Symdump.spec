@@ -45,7 +45,7 @@ cp %{SOURCE1001} .
 export CFLAGS+=" -fvisibility=hidden"
   export CXXFLAGS+=" -fvisibility=hidden"
   
-CFLAGS="%{optflags}" perl Makefile.PL
+CFLAGS="%{optflags} -fvisibility=hidden" perl Makefile.PL
 make %{?_smp_mflags}
 
 %check
